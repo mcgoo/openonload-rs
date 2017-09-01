@@ -1,0 +1,19 @@
+language: rust
+sudo: required
+
+matrix:
+    - os: linux
+      rust: stable
+      dist: trusty
+    - os: linux
+      rust: stable
+      dist: xenial
+
+before_script:
+  - sudo apt install build-essential linux-headers-$(uname -r)
+  - wget http://www.openonload.org/download/openonload-201606-u1.3.tgz
+  - tar -zxvf openonload-201606-u1.3.tgz
+  - sudo openonload-201606-u1.3/scripts/onload_install --userfiles
+script:
+  - cargo test --manifest-path=openonload-sys/Cargo.toml
+  - cargo test
