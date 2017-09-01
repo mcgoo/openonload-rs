@@ -1,0 +1,12 @@
+[package]
+name = "openonload-sys"
+version = "0.1.0"
+authors = ["Jim McGrath <jmcgrath@hakafin.com>"]
+build = "build.rs"
+
+[dependencies]
+
+[build-dependencies]
+bindgen = "0.30"
+
+

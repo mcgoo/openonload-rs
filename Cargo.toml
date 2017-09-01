@@ -1,0 +1,10 @@
+[package]
+name = "openonload"
+version = "0.1.0"
+authors = ["Jim McGrath <jimmc2@gmail.com>"]
+
+[badges]
+travis-ci = { repository = "mcgoo/openonload-rs" }
+
+[dependencies]
+openonload-sys = { version="0.1.0", path = "openonload-sys" }
