@@ -1,0 +1,20 @@
+language: rust
+sudo: required
+#dist: trusty
+
+matrix:
+    - os: linux
+      rust: stable
+      dist: trusty
+    - os: linux
+      rust: stable
+      dist: xenial
+
+before_script:
+  - wget http://www.openonload.org/download/openonload-201606-u1.3.tgz
+  - tar -zxvf openonload-201606-u1.3.tgz
+  - openonload-201606-u1.3/scripts/onload_install --userfiles
+script:
+  - cargo test --manifest-path=openonload-sys/Cargo.toml
+  - cargo test
+  
